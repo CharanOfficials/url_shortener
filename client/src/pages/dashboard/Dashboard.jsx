@@ -24,7 +24,7 @@ const Dashboard = () => {
             <DashMenu />
           </Box>
           <div className="hitsgraphcount">
-            <Text mt={"2rem"} w={"80%"} className="htext">
+            <Text mt={"2rem"} w={"80%"} className="htext border">
               Dashboard
             </Text>
             {shortUrl !== "" ? (

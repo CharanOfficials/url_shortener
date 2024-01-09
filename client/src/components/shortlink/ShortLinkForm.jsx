@@ -96,7 +96,7 @@ const ShortLinkForm = () => {
   };
   return (
     <div className="shortlinkform">
-      <Text className="htext">Generate Link</Text>
+      <Text className="htext border">Generate Link</Text>
       <div className="vstack">
         <FormControl id="original-url" isRequired>
           <FormLabel>Enter your URL</FormLabel>

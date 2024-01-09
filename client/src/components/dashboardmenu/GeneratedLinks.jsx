@@ -62,7 +62,7 @@ const DashMenu = () => {
 
   return (
     <Box h={"77%"} w={"20rem"} m={"0.8rem"}>
-      <Text className="htext" style={{ marginTop: "2.05rem" }}>
+      <Text className="htext border" style={{ marginTop: "2.05rem" }}>
         Generated Links
       </Text>
       <Box className="shortlinks">

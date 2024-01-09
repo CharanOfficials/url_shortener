@@ -9,7 +9,7 @@ const Header = () => {
       <div className="text">
         <Text>URL MINIFIRE</Text>
       </div>
-      {visible ? <Logout /> : <></>}
+      <div className="logout">{visible ? <Logout /> : <></>}</div>
     </Box>
   );
 };

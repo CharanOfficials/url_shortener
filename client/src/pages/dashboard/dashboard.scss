@@ -3,10 +3,14 @@
   text-transform: uppercase;
   text-align: center;
   width: 100%;
-  border: 1px solid #477152;
   color: #477152;
   font-size: 2rem;
   font-weight: 600;
+  border-radius: 0.5rem;
+  background-color: #f8fffa;
+}
+.border {
+  border: 1px solid #477152;
 }
 .dashBoard {
   color: #477152;
@@ -38,6 +42,7 @@
   align-items: center;
   .hitcount {
     margin-top: 2rem;
+
     display: flex;
     flex-direction: column;
     width: 30%;
@@ -47,9 +52,11 @@
     height: 30%;
     overflow: hidden;
     .hcount {
+      margin-top: 0.5rem;
+      border: 1px solid #477152;
       text-align: center;
       background-color: #a3e3b4;
-      color: #477152;
+      color: #202220;
       font-weight: 500;
       font-size: 6rem;
       text-transform: uppercase;
@@ -90,6 +97,9 @@
 .header {
   display: flex;
   .text {
-    width: 95%;
+    width: 100%;
+  }
+  .logout {
+    margin-right: 3rem;
   }
 }

@@ -1,0 +1,29 @@
+{
+  "name": "urlshortenerserver",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "An app to build the short urls along with custom expiry time and url's short analysis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CharanOfficials/url_shortener.git"
+  },
+  "author": "Charanjeet Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CharanOfficials/url_shortener/issues"
+  },
+  "homepage": "https://github.com/CharanOfficials/url_shortener#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.3",
+    "random-string-gen": "^1.1.4"
+  }
+}

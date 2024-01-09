@@ -1,0 +1,95 @@
+@import "../../responsive.scss";
+.htext {
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  border: 1px solid #477152;
+  color: #477152;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.dashBoard {
+  color: #477152;
+  display: flex;
+  @include xl {
+    flex-direction: column;
+    align-items: center;
+  }
+  width: 100%;
+  height: 100%;
+  .shortlinkform {
+    padding: 2rem;
+    .vstack {
+      margin-top: 3rem;
+      min-width: 20rem;
+      margin-right: 1rem;
+      .shorturl {
+        background-color: #a3e3b4;
+        color: #477152;
+      }
+    }
+  }
+}
+.hitsgraphcount {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: #477152;
+  align-items: center;
+  .hitcount {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    @include md {
+      width: 50%;
+    }
+    height: 30%;
+    overflow: hidden;
+    .hcount {
+      text-align: center;
+      background-color: #a3e3b4;
+      color: #477152;
+      font-weight: 500;
+      font-size: 6rem;
+      text-transform: uppercase;
+      width: 100%;
+    }
+  }
+  .hitgraph {
+    width: 80%;
+    height: 15rem;
+    margin-top: 2rem;
+  }
+}
+.subdashboard {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  @include xl {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.generatedlinks {
+  color: #477152;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.shortlinks {
+  margin-top: 2rem;
+  height: 90%;
+  overflow: scroll;
+}
+.links {
+  width: 80%;
+}
+.header {
+  display: flex;
+  .text {
+    width: 95%;
+  }
+}

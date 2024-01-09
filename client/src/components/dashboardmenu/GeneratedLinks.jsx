@@ -14,24 +14,9 @@ const DashMenu = () => {
   const [urls, setUrls] = useState([]);
   const navigate = useNavigate();
   const toast = useToast();
-  const handleCopy = (url) => {
-    copy(`${REACT_ROUTE}/api/${url}`);
-    toast({
-      title: "Copied.",
-      status: "success",
-      duration: 5000,
-      isClosable: true,
-      position: "bottom",
-    });
-  };
-  const handleRedirect = (url) => {
-    setShortUrl("");
-    url.hit_ratio++;
-    setShortUrl(url);
-    window.open(`${REACT_ROUTE}/api/${url.short_url}`, "_blank");
-  };
   useEffect(() => {
     try {
+      console.log("updated", isUpdated);
       const loadShortLinks = async () => {
         setLoading(true);
         const url = REACT_ROUTE;
@@ -57,11 +42,29 @@ const DashMenu = () => {
       if (token) {
         loadShortLinks();
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   }, [isUpdated]);
+  const handleCopy = (url) => {
+    copy(`${REACT_ROUTE}/api/${url}`);
+    toast({
+      title: "Copied.",
+      status: "success",
+      duration: 5000,
+      isClosable: true,
+      position: "bottom",
+    });
+  };
+  const handleRedirect = (url) => {
+    setShortUrl("");
+    url.hit_ratio++;
+    setShortUrl(url);
+    window.open(`${REACT_ROUTE}/api/${url.short_url}`, "_blank");
+  };
 
   return (
-    <Box h={"77%"} w={"20rem"} m={"0.8rem"}>
+    <Box w={"20rem"} m={"0.8rem"}>
       <Text className="htext border" style={{ marginTop: "2.05rem" }}>
         Generated Links
       </Text>

@@ -19,7 +19,7 @@ const Dashboard = () => {
     <>
       <div className="dashBoard">
         <ShortLinkForm />
-        <Box className="subdashboard">
+        <Box h={"50%"} className="subdashboard">
           <Box>
             <DashMenu />
           </Box>

@@ -10,6 +10,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import copy from "clipboard-copy";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { MdOutlineContentCopy } from "react-icons/md";
@@ -78,6 +79,7 @@ const ShortLinkForm = () => {
       setExpiresAtDate(expiresAt[0]);
       setExpiresAtTime(expiresAt[1].split(".")[0]);
       setIsUpdated(!isUpdated);
+      console.log(isUpdated);
       setLoading(false);
     } catch (err) {
       if (err.response.data.message === "Token has expired.") {

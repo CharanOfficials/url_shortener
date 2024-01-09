@@ -5,6 +5,7 @@
   "description": "An app to build the short urls along with custom expiry time and url's short analysis",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

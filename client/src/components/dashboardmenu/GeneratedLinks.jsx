@@ -4,7 +4,6 @@ import { Box } from "@chakra-ui/react";
 import { MdOutlineContentCopy } from "react-icons/md";
 import { FiExternalLink } from "react-icons/fi";
 import { REACT_ROUTE } from "../../../paths";
-import { useNavigate } from "react-router-dom";
 import { useToast, Text } from "@chakra-ui/react";
 import copy from "clipboard-copy";
 import { useUrlContext } from "../../context/url.context";
@@ -12,12 +11,10 @@ const DashMenu = () => {
   const [loading, setLoading] = useState(false);
   const { shortUrl, setShortUrl, isUpdated } = useUrlContext();
   const [urls, setUrls] = useState([]);
-  const navigate = useNavigate();
   const toast = useToast();
   useEffect(() => {
-    try {
-      console.log("updated", isUpdated);
-      const loadShortLinks = async () => {
+    const loadShortLinks = async () => {
+      try {
         setLoading(true);
         const url = REACT_ROUTE;
         const token = JSON.parse(localStorage.getItem("userInfo"));
@@ -37,15 +34,20 @@ const DashMenu = () => {
           isClosable: true,
           position: "bottom",
         });
-      };
-      const token = localStorage.getItem("userInfo");
-      if (token) {
-        loadShortLinks();
+      } catch (error) {
+        toast({
+          title: "Error Occured",
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+          position: "bottom",
+        });
       }
-    } catch (error) {
-      console.log(error);
-    }
+    };
+
+    loadShortLinks();
   }, [isUpdated]);
+
   const handleCopy = (url) => {
     copy(`${REACT_ROUTE}/api/${url}`);
     toast({
@@ -55,6 +57,7 @@ const DashMenu = () => {
       isClosable: true,
       position: "bottom",
     });
+    setLoading(!loading);
   };
   const handleRedirect = (url) => {
     setShortUrl("");
